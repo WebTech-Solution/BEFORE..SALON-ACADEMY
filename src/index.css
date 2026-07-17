@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-roseGold: #B76E79;
+  --color-roseGold-light: #e1b1b9;
+  --color-roseGold-dark: #934d57;
+  
+  --color-blushPink: #FADADD;
+  --color-blushPink-light: #fef1f2;
+  --color-blushPink-dark: #f5b5bd;
+  
+  --color-champagneGold: #D4AF37;
+  --color-champagneGold-light: #ecd687;
+  --color-champagneGold-dark: #a5831f;
+  
+  --color-warmIvory: #FFF9F5;
+  --color-warmIvory-light: #FFFDFB;
+  --color-warmIvory-dark: #f3ece7;
+  
+  --color-charcoal: #1C1C1C;
+  --color-charcoal-light: #2d2d2d;
+  --color-charcoal-dark: #121212;
+  
+  --color-darkGray: #333333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF9F5;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1C1C1C;
+}
+::-webkit-scrollbar-thumb {
+  background: #B76E79;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Glassmorphism utility classes in pure CSS */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(183, 110, 121, 0.15);
+}
+.dark .glass-panel {
+  background-color: rgba(28, 28, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(183, 110, 121, 0.15);
+}
+.dark .glass-card {
+  background-color: rgba(28, 28, 28, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle Cursor Circle Outline */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #B76E79;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #B76E79;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.08s ease-out, border-color 0.2s;
+}
+
+/* Disable default cursor if custom cursor is active on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-active {
+    cursor: none;
+  }
+  .custom-cursor-active a,
+  .custom-cursor-active button,
+  .custom-cursor-active input,
+  .custom-cursor-active textarea,
+  .custom-cursor-active select,
+  .custom-cursor-active [role="button"] {
+    cursor: none;
+  }
+}
+
+/* Hide custom cursor on mobile */
+@media (max-width: 768px) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Sparkle Floating Animation */
+@keyframes float-sparkle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.sparkle-element {
+  animation: float-sparkle 4s ease-in-out infinite;
+}
+
+/* Custom Text Shadow for Premium Feel */
+.text-luxury-shadow {
+  text-shadow: 0 4px 12px rgba(183, 110, 121, 0.15);
+}
+
+.dark .text-luxury-shadow {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
