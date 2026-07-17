@@ -25,7 +25,7 @@ const FloatingWhatsApp = () => {
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="flex items-center justify-center w-10 h-10 text-lg font-bold border rounded-full bg-white/20 border-white/40 font-playfair">
-                  C
+                  B
                 </div>
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border border-white rounded-full"></span>
               </div>
