@@ -26,7 +26,7 @@ const Testimonials = () => {
       id: 3,
       name: 'Sangeeta Basu',
       rating: 5,
-      avatarInitials: 'P',
+      avatarInitials: 'SB',
       text: "The experience was amazing, all the staff were very professional with very good behaviour. I got my hair style and colour that I wished for. Very happy and highly recommended👌 …",
     },
   ];
